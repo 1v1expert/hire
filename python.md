@@ -62,8 +62,11 @@ GET /books/17
 
 ~~~python
 def median3(a, b, c):
-    # Впишите код тут
-    return 0
+    arr = sorted([a, b, c, 5])
+    length = len(arr)
+    if length % 2:
+        return arr[int((length-1)/2)]
+    return None
 ~~~
 
 
@@ -140,7 +143,20 @@ def median3(a, b, c):
 
 ```python
 def find_missing(arr):
-    # Впишите код тут
+    for item in range(1, len(arr)+2):
+        if item not in arr:
+            return item
+    if isinstance(arr, list):
+        return 0
     return 0
+
+
+if '__main__' == __name__:
+    arr = (5, 6, 4, 7, 2, 1, 9, 8)
+    result = find_missing(arr)
+    if result:
+        print('Lost number {}'.format(result))
+    else:
+        raise Exception('An error occurred while executing')
 ```
 
